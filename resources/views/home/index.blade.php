@@ -3,5 +3,5 @@
 @section('page.title', "Recipe Book")
 
 @section('content')
-    fdgdfgdfg
+    {{ __('Home page') }}
 @endsection

@@ -3,11 +3,240 @@
 @section('page.title', 'Рецепты')
 
 @section('content')
-    <div class='w-90 ms-5 mt-5 me-5'>
-        <div class='d-flex justify-content-between'>
+    <style>
+        .mainContainer{
+            width: 90%;
+            margin-left: 5%;
+            margin-top: 5%;
+        }
+        .mainContainer__Recipes{
+            display: flex;
+            justify-content: space-between;
+        }
+        .mainContainer__Recipes__Recipe{
+            margin-top: 0;
+            font-size: 42px;
+            line-height: 62px;
+            font-weight: 700;
+        }
+        .mainContainer__Recipes__addRecipe{
+            display: flex;
+            width: 278px;
+            height: 60px;
+            border-radius: 16px;
+            color: white;
+            background-color: orange;
+            border: none;
+        }
+        .mainContainer__Recipes__addRecipe__text{
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 28px;
+            margin-left: 24px;
+        }
+        .svg{
+            margin-top: 20px;
+            margin-left: 30px;
+        }
+        .mainContainer__typesOfRecipes{
+            display: flex;
+            justify-content: space-between;
+        }
+        .typesOfRecipes__text{
+            margin-left: 16px;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 30px;
+        }
+        .typesOfRecipes__container{
+            width: 278px;
+            height: 164px;
+            border: none;
+            border-radius: 14px;
+            box-shadow: 0 0 40px lightgrey;
+        }
+        .borderOfImage{
+            margin-left: 16px;
+            margin-top: 16px;
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background-color: #FFEFCC;
+        }
+        .typesSVG{
+            margin-top: 25%;
+            margin-left: 25%;
+        }
+        .mainContainer__search{
+            margin-top: 80px;
+            display: flex;
+            justify-content: space-between;
+            height: 100px;
+        }
+        .mainContainer__search__name{
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 30px;
+        }
+        .mainContainer__search__input{
+            width: 779px;
+            height: 73px;
+            border-radius: 16px;
+            border: none;
+            box-shadow: 0 0 40px lightgrey;
+            font-size: 18px;
+            font-weight: 500;
+            padding-left: 20px;
+        }
+        .mainContainer__search__findButton{
+            color: white;
+            background-color: orange;
+            border-radius: 16px;
+            width: 152px;
+            height: 73px;
+            border: none;
+        }
+        .mainContainer__searchHelper{
+            display: flex;
+            margin-left: 275px;
+        }
+        .findButtonText{
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 28px;
+        }
+        .searchHelper__request{
+            margin-right: 15px;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 18px;
+            color: #808080;
+            text-decoration: none;
+        }
+        .mainContainer__productCards{
+            margin-top: 40px;
+        }
+        .productCards__card{
+            display: flex;
+            margin-top: 30px;
+            width: 1265px;
+            height: 430px;
+            border-radius: 1px;
+            box-shadow: 0 0 40px lightgrey;
+            border: none;
+        }
+        .cardImage{
+            width: 430px;
+            height: 430px;
+            border-radius: 72px 0 72px 0;
+        }
+        .cardInfo{
+            margin-left: 40px;
+        }
+        .cardInfo__categoriesAndFavourites{
+            margin-top: 40px;
+            display: flex;
+        }
+        .cardInfo__categories{
+            display: flex;
+            margin-top: 15px;
+        }
+        .category{
+            border-radius: 5px;
+            background-color: #FFEFCC;
+            margin-right: 15px;
+            height: 25px;
+            color: #F29E1F;
+        }
+        .cardInfo__favourites{
+            display: flex;
+            margin-left: 240px;
+        }
+        .favouritesContainer{
+            display: flex;
+            width: 107px;
+            height: 50px;
+            border-radius: 16px;
+            border: 1px solid orange;
+            margin-right: 20px;
+        }
+        .favouritesContainerSVG{
+            margin-top: 17px;
+            margin-left: 30px;
+        }
+        .favouritesContainerAmount{
+            color: orange;
+            font-weight: 600;
+            font-size: 18px;
+            margin-left: 10px;
+        }
+        .recipeName{
+            font-weight: 700;
+            font-size: 24px;
+        }
+        .recipeDescription{
+            color: #4A525A;
+            font-weight: 400;
+            font-size: 18px;
+        }
+        .recipeInfo{
+            margin-top: 60px;
+            display: flex;
+        }
+        .cookingTime{
+            display: flex;
+            height: 64px;
+            width: 250px;
+        }
+        .personsCount{
+            margin-left: 40px;
+            display: flex;
+            height: 64px;
+            width: 250px;
+        }
+        .cookingTime__description{
+            display: grid;
+            grid-row: 2;
+            margin-left: 10px;
+        }
+        .cookingTimeSVG{
+            margin-top: 20px;
+        }
+        .personsCountSVG{
+            margin-top: 20px;
+        }
+        .cookingTime__description__timing{
+            font-weight: 400;
+            font-size: 14px;
+            color: gray;
+        }
+        .cookingTime__description_time{
+            font-weight: 400;
+            font-size: 16px;
+            color: #25292D;
+        }
+        .loadMore{
+            margin-top: 60px;
+            display: flex;
+            justify-content: center;
+        }
+        .loadMoreButton{
+            width: 309px;
+            height: 60px;
+            border-radius: 16px;
+            background-color: white;
+            border: 1px solid orange;
+            color: orange;
+            font-weight: 600;
+            font-size: 18px;
+            align-content: center;
+        }
+    </style>
+    <div class='mainContainer'>
+        <div class='mainContainer__Recipes'>
             <div>
-                <p class='mt-0 font-size-42px line-height-62px font-weight-700'>
-                    Рецепты
+                <p class='mainContainer__Recipes__Recipe'>
+                    {{ __('Рецепты') }}
                 </p>
             </div>
             <div>
@@ -23,7 +252,7 @@
                         </defs>
                     </svg>
                     <p class='mainContainer__Recipes__addRecipe__text'>
-                        Добавить рецепт
+                        {{ __('Добавить рецепт') }}
                     </p>
                 </button>
             </div>
@@ -36,7 +265,7 @@
                     </svg>
                 </div>
                 <p class='typesOfRecipes__text'>
-                    Простые блюда
+                    {{ __('Простые блюда') }}
                 </p>
             </div>
             <div class='typesOfRecipes__container'>
@@ -47,7 +276,7 @@
                     </svg>
                 </div>
                 <p class='typesOfRecipes__text'>
-                    Детское
+                    {{ __('Детское') }}
                 </p>
             </div>
             <div class='typesOfRecipes__container'>
@@ -57,7 +286,7 @@
                     </svg>
                 </div>
                 <p class='typesOfRecipes__text'>
-                    От шеф-поваров
+                    {{ __('От Шеф-поваров') }}
                 </p>
             </div>
             <div class='typesOfRecipes__container'>
@@ -67,32 +296,32 @@
                     </svg>
                 </div>
                 <p class='typesOfRecipes__text'>
-                    На праздник
+                    {{ __('На праздник') }}
                 </p>
             </div>
         </div>
         <div class='mainContainer__search'>
             <div>
                 <p class='mainContainer__search__name'>
-                    Поиск рецепта
+                    {{ __('Поиск рецепта') }}
                 </p>
             </div>
             <div>
-                <input class='mainContainer__search__input' placeholder='Название блюда...'></input>
+                <input class='mainContainer__search__input' placeholder='Название блюда...'>
             </div>
             <div>
                 <button class='mainContainer__search__findButton' type=''>
-                    <p class='findButtonText'>Поиск</p>
+                    <p class='findButtonText'>{{ __('Поиск') }}</p>
                 </button>
             </div>
         </div>
         <div class='mainContainer__searchHelper'>
-            <a class='searchHelper__request' href=''>мясо</a>
-            <a class='searchHelper__request' href=''>деликатесы</a>
-            <a class='searchHelper__request' href=''>пироги</a>
-            <a class='searchHelper__request' href=''>рыба</a>
-            <a class='searchHelper__request' href=''>пост</a>
-            <a class='searchHelper__request' href=''>пасха2021</a>
+            <a class='searchHelper__request' href=''>{{ __('мясо') }}</a>
+            <a class='searchHelper__request' href=''>{{ __('деликатесы') }}</a>
+            <a class='searchHelper__request' href=''>{{ __('пироги') }}</a>
+            <a class='searchHelper__request' href=''>{{ __('рыба') }}</a>
+            <a class='searchHelper__request' href=''>{{ __('пост') }}</a>
+            <a class='searchHelper__request' href=''>{{ __('пасха2023') }}</a>
         </div>
         <div class='mainContainer__productCards'>
             <div class='productCards__card'>
@@ -103,13 +332,13 @@
                     <div class='cardInfo__categoriesAndFavourites'>
                         <div class='cardInfo__categories'>
                             <div class='category'>
-                                десерты
+                                {{ __('десерты') }}
                             </div>
                             <div class='category'>
-                                клубника
+                                {{ __('клубника') }}
                             </div>
                             <div class='category'>
-                                сливки
+                                {{ __('сливки') }}
                             </div>
                         </div>
                         <div class='cardInfo__favourites'>
@@ -148,7 +377,7 @@
                     </div>
                     <div>
                         <p class='recipeName'>
-                            Клубничная Панна-Котта
+                            {{ __('Клубничная Панна-Котта') }}
                         </p>
                         <p class='recipeDescription'>
                             Десерт, который невероятно легко и быстро готовится. Советую подавать его порционно в красивых бокалах, украсив взбитыми сливками, свежими ягодами и мятой.

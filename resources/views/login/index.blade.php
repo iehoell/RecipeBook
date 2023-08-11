@@ -3,5 +3,5 @@
 @section('page.title', "Recipe Book")
 
 @section('content')
-    Логин
+    {{ __('Логин') }}
 @endsection
