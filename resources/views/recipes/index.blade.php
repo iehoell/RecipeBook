@@ -39,6 +39,7 @@
             margin-left: 30px;
         }
         .mainContainer__typesOfRecipes{
+            margin-top: 3%;
             display: flex;
             justify-content: space-between;
         }
@@ -46,11 +47,11 @@
             margin-left: 16px;
             font-weight: 700;
             font-size: 24px;
-            line-height: 30px;
+            text-align: left;
         }
         .typesOfRecipes__container{
             width: 278px;
-            height: 164px;
+            min-height: 140px;
             border: none;
             border-radius: 14px;
             box-shadow: 0 0 40px lightgrey;
@@ -119,7 +120,6 @@
         .productCards__card{
             display: flex;
             margin-top: 30px;
-            width: 1265px;
             height: 430px;
             border-radius: 1px;
             box-shadow: 0 0 40px lightgrey;
@@ -171,10 +171,12 @@
             margin-left: 10px;
         }
         .recipeName{
+            text-align: left;
             font-weight: 700;
             font-size: 24px;
         }
         .recipeDescription{
+            text-align: left;
             color: #4A525A;
             font-weight: 400;
             font-size: 18px;

@@ -3,6 +3,7 @@
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\RecipesController;
+use App\Http\Controllers\FavoritesController;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'home.index')->name('home');
@@ -40,6 +41,6 @@ Route::delete('recipes/{recipe}', [RecipesController::class, 'delete'])->name('r
 
 //FavoritesController
 
-Route::get('favorites', FavoritesController::class)->name('favorites');
+Route::get('favorites', [FavoritesController::class, 'index'])->name('favorites');
 
 Route::redirect('/home', '/');

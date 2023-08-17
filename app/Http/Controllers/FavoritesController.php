@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class FavoritesController extends Controller
 {
+    public function index()
+    {
+        return view('favorites.index');
+    }
+    
     public function __invoke()
     {
         return 'Favorites';
