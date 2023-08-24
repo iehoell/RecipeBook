@@ -243,7 +243,7 @@
                         </svg>
                         <a 
                             class='buttons__addRecipe__text'
-                            href='{{ route('recipes') }}'>
+                            href='{{ route('recipes.create') }}'>
                             {{ __('Добавить рецепт') }}
                         </a>
                     </button>

@@ -13,7 +13,7 @@ class RecipesController extends Controller
 
     public function create()
     {
-        return 'Страница создание рецепта';
+        return view('recipes.create');
     }
 
     public function store()

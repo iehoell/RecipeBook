@@ -23,7 +23,7 @@
      font-size: 24px;
      font-weight: 700;
      text-align: left;
-     margin: 5%;
+     margin: 5% 10% 5% 10%;
     }
     .modal__content__dataInputs{
      display: grid;
@@ -31,17 +31,19 @@
      grid-column-gap: 20px;
      grid-row-gap: 20px;
      width: 100%;
-     margin-left: 5%;
-     margin-right: 5%;
+     margin-left: 10%;
+     margin-right: 10%;
     }
     .modal__content__formButtons{
      display: flex;
-     margin: 5% 5% 5% 5%;
+     margin: 5% 0 5% 0;
      justify-content: space-between;
     }
     .registerButton{
+         margin-left: 10%;
+         margin-right: 2%;
          align-items: center;
-         width: 278px;
+         min-width: 261px;
          height: 60px;
          border-radius: 16px;
          background-color: orange;
@@ -57,8 +59,10 @@
          margin-top: 10px;
      }
     .cancelButton{
+         margin-right: 10%;
+         margin-left: 2%;
          align-items: center;
-         width: 278px;
+         min-width: 261px;
          height: 60px;
          border-radius: 16px;
          background-color: white;
@@ -76,7 +80,7 @@
     input{
      padding: 20px;
      background-color: white;
-     width: 90%;
+     width: 80%;
      height: 50px;
      border-radius: 16px;
      border: 1px solid #9196A166;
@@ -92,19 +96,18 @@
         display: flex;
     }
     .password{
-        width: 278px;
-        height: 60px;
-        margin-left: 0%;
-        margin-right: 5%;
+        width: 261px;
+        height: 50px;
+        margin-right: 3%;
     }
     .anotherPassword{
-        width: 278px;
-        height: 60px;
-        margin-left: 5%;
+        width: 261px;
+        height: 50px;
+        margin-left: 2%;
     }
     .helperText{
         text-align: left;
-        margin: 0 0 0 5%;
+        margin: 0 0 0 10%;
         color: #25292D4D;
         font-size: 12px;
         font-weight: 400;
@@ -121,9 +124,10 @@
         <p class='modal__content__title'>
             {{ __('Регистрация') }}
         </p>
-        <form>
+        <form action='{{ route('register.store') }}' method="POST">
+            @csrf
             <div class='modal__content__dataInputs'>
-                <input placeholder="Имя" type='text'>
+                <input placeholder="Имя" type='text' autofocus>
                 <input placeholder="Логин" type='text'>
                 <div class='modal__content__dataInputs__passwords'>
                    <input class='password' placeholder='Пароль' type='password'>

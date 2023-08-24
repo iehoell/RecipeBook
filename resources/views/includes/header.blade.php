@@ -50,6 +50,11 @@
             display: flex;
             width: fit-content;
         }
+        .active{
+            color: #3A3C41;
+            font-weight: 600;
+            font-size: 18px;
+        }
     </style>
     <div class='header'>
         <div class='headerItems'>
@@ -59,17 +64,17 @@
                         {{ config('app.name') }}
                 </a>
                 <a 
-                    class='header__category' 
+                    class='header__category  {{ Route::is('home*') ? 'active' : '' }}' 
                     href="{{ route('home') }}">
                         {{ __('Главная') }}
                 </a>
                 <a 
-                    class='header__category' 
+                    class='header__category  {{ Route::is('recipes*') ? 'active' : '' }}' 
                     href="{{ route('recipes') }}">
                         {{ __('Рецепты') }}
                 </a>
                 <a 
-                    class='header__category' 
+                    class='header__category  {{ Route::is('favorites*') ? 'active' : '' }}' 
                     href="{{ route('favorites') }}">
                         {{ __('Избранное') }}
                 </a>

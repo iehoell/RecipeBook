@@ -23,23 +23,24 @@
      font-size: 24px;
      font-weight: 700;
      text-align: left;
-     margin: 5%;
+     margin: 5% 5% 5% 10%;
     }
     .modal__content__dataInputs{
      display: grid;
      grid-column: 2;
      grid-column-gap: 20px;
      grid-row-gap: 20px;
-     width: 100%;
-     margin-left: 5%;
-     margin-right: 5%;
+     width: 90%;
+     margin-left: 10%;
+     margin-right: 10%;
     }
     .modal__content__formButtons{
      display: flex;
-     margin: 5% 5% 10% 5%;
+     margin: 5% 10% 10% 10%;
      justify-content: space-between;
     }
     .loginButton{
+        margin-right: 2%;
          align-items: center;
          width: 278px;
          height: 60px;
@@ -57,6 +58,7 @@
          margin-top: 10px;
      }
     .cancelButton{
+        margin-left: 2%;
          align-items: center;
          width: 278px;
          height: 60px;
@@ -101,8 +103,9 @@
             {{ __('Войти') }}
         </p>
         <form>
+            @csrf
             <div class='modal__content__dataInputs'>
-                <input placeholder="Логин" type='text'>
+                <input placeholder="Логин" type='text' autofocus>
                 <input placeholder="Пароль" type='password'>
             </div>
             <div class='modal__content__formButtons'>

@@ -29,6 +29,9 @@
             border: none;
         }
         .mainContainer__Recipes__addRecipe__text{
+            text-decoration: none;
+            color: white;
+            margin-top: 17px;
             font-weight: 600;
             font-size: 18px;
             line-height: 28px;
@@ -142,7 +145,7 @@
                 </p>
             </div>
             <div>
-                <button class='mainContainer__Recipes__addRecipe'>
+                <button class='mainContainer__Recipes__addRecipe' >
                     <svg class='svg' width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_2_464)">
                             <path d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z" fill="white"/>
@@ -153,9 +156,9 @@
                             </clipPath>
                         </defs>
                     </svg>
-                    <p class='mainContainer__Recipes__addRecipe__text'>
+                    <a class='mainContainer__Recipes__addRecipe__text' href='{{ route('recipes.create')}}'>
                         {{ __('Добавить рецепт') }}
-                    </p>
+                    </a>
                 </button>
             </div>
         </div>
