@@ -11,8 +11,15 @@ class RegisterController extends Controller
         return view('register.index');
     }
 
-    public function store()
+    public function store(Request $request)
     {
-        return 'Запрос создание рецепта';
+        $name = $request->input('name');
+        $login = $request->input('login');
+        $password = $request->input('password');
+        $password__confirmation = $request->input('password__confirmation');
+
+        dd($name, $login, $password, $password__confirmation);
+
+        return 'Запрос на регистрацию';
     }
 }

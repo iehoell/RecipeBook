@@ -1,7 +1,7 @@
 <style>
     .modalBackground{
      margin: 0 auto;
-     background-color:rgba(0, 0, 0, 0.2);
+     background-color: rgba(0,0,0,0.4);
      width: 100vw;
      height: 100vh;
      display: flex;
@@ -127,11 +127,11 @@
         <form action='{{ route('register.store') }}' method="POST">
             @csrf
             <div class='modal__content__dataInputs'>
-                <input placeholder="Имя" type='text' autofocus>
-                <input placeholder="Логин" type='text'>
+                <input name='name' placeholder="Имя" type='text' autofocus>
+                <input name='nickname' placeholder="Логин" type='text'>
                 <div class='modal__content__dataInputs__passwords'>
-                   <input class='password' placeholder='Пароль' type='password'>
-                   <input class='anotherPassword' placeholder='Повторите пароль' type='password'>
+                   <input name='password' class='password' placeholder='Пароль' type='password'>
+                   <input name='password__confirmation' class='anotherPassword' placeholder='Повторите пароль' type='password'>
                 </div>
             </div>
             <p class='helperText'>

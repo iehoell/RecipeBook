@@ -212,7 +212,10 @@
                 </p>
             </div>
             <div>
-                <input class='mainContainer__search__input' placeholder='Название блюда...'>
+                <input 
+                    class='mainContainer__search__input' 
+                    placeholder='Название блюда...' 
+                    name='search'>
             </div>
             <div>
                 <button class='mainContainer__search__findButton' type=''>

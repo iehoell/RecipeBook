@@ -11,8 +11,13 @@ class LoginController extends Controller
         return view('login.index');
     }
 
-    public function store()
+    public function store(Request $request)
     {
-        return 'Запрос создание рецепта';
+        $login = $request->input('login');
+        $password = $request->input('password');
+
+        dd($login, $password);
+
+        return 'Запрос на вход';
     }
 }

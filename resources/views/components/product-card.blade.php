@@ -53,7 +53,9 @@
         margin-left: 10px;
     }
     .recipeName{
-        text-align: left;
+        text-decoration: none;
+        margin-right: 63%;
+        color: #25292D;
         font-weight: 700;
         font-size: 24px;
     }
@@ -99,23 +101,28 @@
         font-size: 16px;
         color: #25292D;
     }
+    .buttonLink{
+        width: 100%;
+        height: 430px;
+        text-decoration: none;
+    }
 </style>
 
 <div class='productCards__card'>
     <div>
-        <img class='cardImage' src='https://yastatic.net/s3/fiji-static/_/BhSOy0uVxgiuSYKBBKCi2JGQy6U.png' alt='img'></img>
+        <img class='cardImage' src='https://yastatic.net/s3/fiji-static/_/BhSOy0uVxgiuSYKBBKCi2JGQy6U.png' alt='img'>
     </div>
     <div class='cardInfo'>
         <div class='cardInfo__categoriesAndFavourites'>
             <div class='cardInfo__categories'>
                 <div class='category'>
-                    десерты
+                    {{ __('десерты') }}
                 </div>
                 <div class='category'>
-                    клубника
+                    {{ __('клубника') }}
                 </div>
                 <div class='category'>
-                    сливки
+                    {{ __('сливки') }}
                 </div>
             </div>
             <div class='cardInfo__favourites'>
@@ -153,11 +160,11 @@
             </div>
         </div>
         <div>
-            <p class='recipeName'>
-                Клубничная Панна-Котта
-            </p>
+            <a class='recipeName' href='{{ route('recipes') }}'>
+                {{ __('Клубничная Панна-Котта') }}
+            </a>
             <p class='recipeDescription'>
-                Десерт, который невероятно легко и быстро готовится. Советую подавать его порционно в красивых бокалах, украсив взбитыми сливками, свежими ягодами и мятой.
+                {{ __('Десерт, который невероятно легко и быстро готовится. Советую подавать его порционно в красивых бокалах, украсив взбитыми сливками, свежими ягодами и мятой.') }}
             </p>
             <div class='recipeInfo'>
                 <div class='cookingTime'>
@@ -172,8 +179,8 @@
                     </defs>
                     </svg>
                     <div class='cookingTime__description'>
-                        <p class='cookingTime__description__timing'>Время приготовления:</p>
-                        <p class='cookingTime__description_time'>35 мин</p>
+                        <p class='cookingTime__description__timing'>{{ __('Время приготовления:') }}</p>
+                        <p class='cookingTime__description_time'>{{ __('35 мин') }}</p>
                     </div>
                 </div>
                 <div class='personsCount'>
@@ -181,8 +188,8 @@
                     <path d="M41.3335 21.6667C38.1335 21.6667 33.1468 22.5733 29.3335 24.3333C25.5201 22.5467 20.5335 21.6667 17.3335 21.6667C11.5468 21.6667 0.00012207 24.5467 0.00012207 30.3333V37.6667H58.6668V30.3333C58.6668 24.5467 47.1201 21.6667 41.3335 21.6667ZM30.6668 33.6667H4.00012V30.3333C4.00012 28.8933 10.8268 25.6667 17.3335 25.6667C23.8401 25.6667 30.6668 28.8933 30.6668 30.3333V33.6667ZM54.6668 33.6667H34.6668V30.3333C34.6668 29.1067 34.1335 28.04 33.2801 27.08C35.6268 26.28 38.5068 25.6667 41.3335 25.6667C47.8401 25.6667 54.6668 28.8933 54.6668 30.3333V33.6667ZM17.3335 19C22.4801 19 26.6668 14.8133 26.6668 9.66668C26.6668 4.52001 22.4801 0.333344 17.3335 0.333344C12.1868 0.333344 8.00012 4.52001 8.00012 9.66668C8.00012 14.8133 12.1868 19 17.3335 19ZM17.3335 4.33334C20.2668 4.33334 22.6668 6.73334 22.6668 9.66668C22.6668 12.6 20.2668 15 17.3335 15C14.4001 15 12.0001 12.6 12.0001 9.66668C12.0001 6.73334 14.4001 4.33334 17.3335 4.33334ZM41.3335 19C46.4801 19 50.6668 14.8133 50.6668 9.66668C50.6668 4.52001 46.4801 0.333344 41.3335 0.333344C36.1868 0.333344 32.0001 4.52001 32.0001 9.66668C32.0001 14.8133 36.1868 19 41.3335 19ZM41.3335 4.33334C44.2668 4.33334 46.6668 6.73334 46.6668 9.66668C46.6668 12.6 44.2668 15 41.3335 15C38.4001 15 36.0001 12.6 36.0001 9.66668C36.0001 6.73334 38.4001 4.33334 41.3335 4.33334Z" fill="#FDB100"/>
                     </svg>
                     <div class='cookingTime__description'>
-                        <p class='cookingTime__description__timing'>Рецепт на:</p>
-                        <p class='cookingTime__description_time'>5 персон</p>
+                        <p class='cookingTime__description__timing'>{{ __('Рецепт на:') }}</p>
+                        <p class='cookingTime__description_time'>{{ __('5 персон') }}</p>
                     </div>
                 </div>
             </div>

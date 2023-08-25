@@ -1,7 +1,7 @@
 <style>
     .modalBackground{
      margin: 0 auto;
-     background-color:rgba(0, 0, 0, 0.2);
+     background-color: rgba(0,0,0,0.4);
      width: 100vw;
      height: 100vh;
      display: flex;
@@ -102,11 +102,11 @@
         <p class='modal__content__title'>
             {{ __('Войти') }}
         </p>
-        <form>
+        <form action='{{ route('login.store') }}' method="POST">
             @csrf
             <div class='modal__content__dataInputs'>
-                <input placeholder="Логин" type='text' autofocus>
-                <input placeholder="Пароль" type='password'>
+                <input name='login' placeholder="Логин" type='text' autofocus>
+                <input name='password' placeholder="Пароль" type='password'>
             </div>
             <div class='modal__content__formButtons'>
                 <button class='loginButton'>
