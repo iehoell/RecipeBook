@@ -6,6 +6,7 @@
         border-radius: 1px;
         box-shadow: 0 0 40px lightgrey;
         border: none;
+        border-radius: 72px 0 0 0;
     }
     .cardImage{
         width: 430px;

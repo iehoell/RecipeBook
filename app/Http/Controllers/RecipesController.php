@@ -67,8 +67,8 @@ class RecipesController extends Controller
     {
         $recipe = (object) [
             'id' => '123',
-            'title' => 'Lorem ipsum dolor sit amet.',
-            'content' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, dolore.',
+            'title' => 'Клубничная Панна-Котта',
+            'content' => 'Десерт, который невероятно легко и быстро готовится. Советую подавать его порционно в красивых бокалах, украсив взбитыми сливками, свежими ягодами и мятой.',
             'category_id' => 1,
         ];
         return view('recipes.edit', compact('recipe'));
@@ -91,7 +91,7 @@ class RecipesController extends Controller
         return 'Запрос изменение рецепта';
     }
 
-    public function delete()
+    public function delete($recipe)
     {
         return 'Запрос удаление рецепта';
     }
