@@ -112,6 +112,15 @@
         font-size: 12px;
         font-weight: 400;
     }
+    .cancelButton__text{
+        margin-top: 15px;
+    }
+    .cancelButton__link{
+        text-decoration: none;
+        color: #FDB100;
+        font-weight: 600;
+        font-size: 18px;
+    }
  </style>
  
 <div class='modalBackground'>
@@ -138,16 +147,16 @@
                Минимум 8 символов
             </p>
             <div class='modal__content__formButtons'>
-                <button class='registerButton'>
+                <button class='registerButton' type='submit'>
                     <p class='registerButton__text'>
                         {{ __('Зарегистрироваться') }}
                     </p>
                 </button>
-                <button class='cancelButton'>
-                    <p class='cancelButton__text'>
-                        {{ __('Отмена') }}
-                    </p>
-                </button>
+                <div class='cancelButton'>
+                    <a class='cancelButton__link' href='{{ route('home') }}'>
+                        <p class='cancelButton__text'>{{ __('Отмена') }}</p>
+                    </a>
+                </div>
             </div>
         </form>
         <a 

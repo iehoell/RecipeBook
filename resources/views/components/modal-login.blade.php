@@ -59,21 +59,17 @@
      }
     .cancelButton{
         margin-left: 2%;
-         align-items: center;
          width: 278px;
          height: 60px;
          border-radius: 16px;
          background-color: white;
          border: 1px solid orange;
-         color: orange;
-         font-weight: 600;
-         font-size: 18px;
-         align-content: center;
     }
-    .cancelButton__text{
-         font-weight: 600;
-         font-size: 18px;
-         margin-top: 10px;
+    .cancelButton__link{
+        text-decoration: none;
+        color: #FDB100;
+        font-weight: 600;
+        font-size: 18px;
     }
     input{
      padding: 20px;
@@ -89,6 +85,9 @@
      font-weight: 600;
      font-size: 18px;
      text-decoration: underline;
+    }
+    .cancelButton__text{
+        margin-top: 15px;
     }
  </style>
  
@@ -109,16 +108,16 @@
                 <input name='password' placeholder="Пароль" type='password'>
             </div>
             <div class='modal__content__formButtons'>
-                <button class='loginButton'>
+                <button class='loginButton' type='submit'>
                     <p class='loginButton__text'>
                         {{ __('Войти') }}
                     </p>
                 </button>
-                <button class='cancelButton'>
-                    <p class='cancelButton__text'>
-                        {{ __('Отмена') }}
-                    </p>
-                </button>
+                <div class='cancelButton'>
+                    <a class='cancelButton__link' href='{{ route('home') }}'>
+                        <p class='cancelButton__text'>{{ __('Отмена') }}</p>
+                    </a>
+                </div>
             </div>
         </form>
         <a 
