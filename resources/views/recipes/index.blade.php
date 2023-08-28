@@ -205,24 +205,9 @@
                 </p>
             </div>
         </div>
-        <div class='mainContainer__search'>
-            <div>
-                <p class='mainContainer__search__name'>
-                    {{ __('Поиск рецепта') }}
-                </p>
-            </div>
-            <div>
-                <input 
-                    class='mainContainer__search__input' 
-                    placeholder='Название блюда...' 
-                    name='search'>
-            </div>
-            <div>
-                <button class='mainContainer__search__findButton' type=''>
-                    <p class='findButtonText'>{{ __('Поиск') }}</p>
-                </button>
-            </div>
-        </div>
+        
+        @include('recipes.filter')
+
         <div class='mainContainer__searchHelper'>
             <a class='searchHelper__request' href=''>{{ __('мясо') }}</a>
             <a class='searchHelper__request' href=''>{{ __('деликатесы') }}</a>
@@ -231,11 +216,17 @@
             <a class='searchHelper__request' href=''>{{ __('пост') }}</a>
             <a class='searchHelper__request' href=''>{{ __('пасха2023') }}</a>
         </div>
-        <div class='mainContainer__productCards'>
-           <x-product-card/>
-           <x-product-card/>
-           <x-product-card/>
-        </div>
+        {{-- @if(empty($posts)) --}}
+            {{-- {{ __('Нет ни одного поста') }} --}}
+        {{-- @else --}}
+            <div class='mainContainer__productCards'>
+                {{-- @foreach($posts as $post) --}}
+                    <x-product-card/>
+                    <x-product-card/>
+                    <x-product-card/>
+                {{-- @endforeach --}}
+            </div>
+        {{-- @endif --}}
     </div>
     <div class='loadMore'>
         <button class='loadMoreButton'>

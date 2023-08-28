@@ -361,16 +361,9 @@
             {{ __('Введите примерное название блюда, а мы по тегам найдем его') }}
         </p>
     </div>
-    <div class='search__search'>
-        <div>
-            <input class='search__search__input' placeholder='Название блюда...'>
-        </div>
-        <div>
-            <button class='search__search__findButton' type=''>
-                <p class='findButtonText'>{{ __('Поиск') }}</p>
-            </button>
-        </div>
-    </div>
+    
+    @include('home.filter')
+
     <div class='search__searchHelper'>
         <a class='searchHelper__request' href=''>{{ __('мясо') }}</a>
         <a class='searchHelper__request' href=''>{{ __('деликатесы') }}</a>

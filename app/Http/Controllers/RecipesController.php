@@ -21,7 +21,7 @@ class RecipesController extends Controller
         $recipes = array_fill(0, 10, $recipe);
 
         $recipes = array_filter($recipes, function ($recipe) use ($search, $category_id) {
-            if($search && ! str_contains($recipe->title, $search)){
+            if($search && ! str_contains(strtolower($recipe->title), strtolower($search))){
                 return false;
             }
 
@@ -66,7 +66,7 @@ class RecipesController extends Controller
     public function edit($recipe)
     {
         $recipe = (object) [
-            'id' => '123',
+            'id' => 123,
             'title' => 'Клубничная Панна-Котта',
             'content' => 'Десерт, который невероятно легко и быстро готовится. Советую подавать его порционно в красивых бокалах, украсив взбитыми сливками, свежими ягодами и мятой.',
             'category_id' => 1,
