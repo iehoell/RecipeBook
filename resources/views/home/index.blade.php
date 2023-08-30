@@ -46,6 +46,7 @@
         color: white;
     }
     .addRecipeSVG{
+        margin-top: 15px;
         margin-left: 20px;
     }
     .buttons__login{
@@ -248,14 +249,17 @@
                         </a>
                     </button>
                 </div>
-                <div class='buttons__login'>
-                    <a href='{{ route('login') }}' class='loginButton'>
-                        <p 
-                            class='loginButton__text'>
-                            {{ __('Войти') }}
-                        </p>
-                    </a>
-                </div>
+                @if(($login = session('login')) == null)
+                    <div class='buttons__login'>
+                        <a href='{{ route('login') }}' class='loginButton'>
+                            <p 
+                                class='loginButton__text'>
+                                {{ __('Войти') }}
+                            </p>
+                        </a>
+                    </div>
+                @else
+                @endif
             </div>
         </div>
         <div class='addRecipeContainer__image'>

@@ -18,8 +18,13 @@ class RegisterController extends Controller
         $password = $request->input('password');
         $password__confirmation = $request->input('password__confirmation');
 
-        dd($name, $login, $password, $password__confirmation);
+        //dd($name, $login, $password, $password__confirmation);
 
-        return 'Запрос на регистрацию';
+        if($password !== $password__confirmation){
+            // ошибка регистрации
+            return redirect()->back()->withInput();
+        }
+
+        return redirect()->route('home');
     }
 }

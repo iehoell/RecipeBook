@@ -136,11 +136,11 @@
         <form action='{{ route('register.store') }}' method="POST">
             @csrf
             <div class='modal__content__dataInputs'>
-                <input name='name' placeholder="Имя" type='text' autofocus>
-                <input name='nickname' placeholder="Логин" type='text'>
+                <input name='name' placeholder="Имя" type='text' autofocus value='{{ request()->old('name') }}'>
+                <input name='login' placeholder="Логин" type='text' value='{{ request()->old('login') }}'>
                 <div class='modal__content__dataInputs__passwords'>
-                   <input name='password' class='password' placeholder='Пароль' type='password'>
-                   <input name='password__confirmation' class='anotherPassword' placeholder='Повторите пароль' type='password'>
+                   <input name='password' class='password' placeholder='Пароль' type='password' value='{{ request()->old('password') }}'>
+                   <input name='password__confirmation' class='anotherPassword' placeholder='Повторите пароль' type='password' value='{{ request()->old('password__confirmation') }}'>
                 </div>
             </div>
             <p class='helperText'>

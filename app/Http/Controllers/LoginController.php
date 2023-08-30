@@ -16,8 +16,15 @@ class LoginController extends Controller
         $login = $request->input('login');
         $password = $request->input('password');
 
-        dd($login, $password);
+        //dd($login, $password);
+        
+        session()->put('login', $login);
 
-        return 'Запрос на вход';
+        // if($login !== $password){
+        //     // ошибка ввода пароля и логина
+        //     return redirect()->back()->withInput();
+        // }
+
+        return redirect()->route('home');
     }
 }
